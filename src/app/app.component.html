@@ -1,1 +1,9 @@
-<div>Hello World !</div>
+<div>
+  <input placeholder="enter task" [(ngModel)]="task" />
+  <button (click)="addTask()" [disabled]="task == ''">add task</button>
+  <button (click)="clearAll()">ClearAll</button>
+</div>
+<li *ngFor="let item of taskList; let i = index">
+  {{ item }}
+  <button (click)="removeTask(i)">Remove</button>
+</li>

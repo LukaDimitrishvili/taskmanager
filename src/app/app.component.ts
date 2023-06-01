@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'taskmanager';
+  task = '';
+  taskList: string[] = []
+
+
+  addTask() {
+    this.taskList.push(this.task)
+    this.task = ""
+  }
+  removeTask(index: number) {
+    this.taskList.splice(index, 1)
+  }
+  clearAll() {
+    this.taskList = []
+  }
 }
