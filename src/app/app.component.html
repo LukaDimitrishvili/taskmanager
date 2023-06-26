@@ -1,9 +1,39 @@
-<div>
-  <input placeholder="enter task" [(ngModel)]="task" />
-  <button (click)="addTask()" [disabled]="task == ''">add task</button>
-  <button (click)="clearAll()">ClearAll</button>
+<div class="wrapper">
+  <div class="nav">
+    <mat-form-field>
+      <mat-label>Enter task</mat-label>
+      <input matInput type="text" [(ngModel)]="task" />
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="addTask()"
+      [disabled]="task == ''"
+      class="action_btn"
+    >
+      Add task
+    </button>
+    <button
+      mat-raised-button
+      color="warn"
+      class="action_btn"
+      (click)="clearAll()"
+    >
+      Clear All
+    </button>
+  </div>
+  <div class="tasks">
+    <div class="task" *ngFor="let item of taskList; let i = index">
+      <mat-checkbox
+        [ngClass]="{ done: item.done }"
+        class="example-margin"
+        [(ngModel)]="item.done"
+        >{{ item.content }}</mat-checkbox
+      >
+      <button (click)="removeTask(i)" mat-icon-button color="warn">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
 </div>
-<li *ngFor="let item of taskList; let i = index">
-  {{ item }}
-  <button (click)="removeTask(i)">Remove</button>
-</li>

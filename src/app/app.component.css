@@ -1,0 +1,41 @@
+.wrapper{
+    width: 600px;
+    margin: auto;
+}
+.done {
+    text-decoration: line-through;
+}
+.nav{
+    text-align: center;
+    margin-top: 50px;
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+}
+.action_btn{
+    height: 56px;
+}
+.task{
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.tasks{
+    margin-top: 30px;
+    
+}
+
+.doneB{
+    border-radius: 10%;
+    margin-left: 5px;
+}
+.undoneB{
+    border-radius: 10%;
+    margin-left: 5px;
+}
+
+.removeB{
+    border-radius: 10%;
+    margin-right: 5px;
+}

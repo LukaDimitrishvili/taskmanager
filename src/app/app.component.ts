@@ -7,11 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   task = '';
-  taskList: string[] = []
+  taskList: any[] = []
+
 
 
   addTask() {
-    this.taskList.push(this.task)
+    this.taskList.push({
+      content: this.task,
+      done: false
+    })
     this.task = ""
   }
   removeTask(index: number) {
@@ -20,4 +24,5 @@ export class AppComponent {
   clearAll() {
     this.taskList = []
   }
+
 }
